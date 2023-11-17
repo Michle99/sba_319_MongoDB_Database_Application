@@ -35,4 +35,17 @@ router.get('/:id', async (req, res) => {
 })
 
 
+/*********************************************/
+//              POST NEW MOVIE 
+/*********************************************/
+router.post('/', async (req, res) => {
+    const db = await connectToDatabase();
+    let collection = db.collection("movies");
+    let newMovie = req.body;
+    newMovie.date = new Date();
+    let result = await collection.insertOne(newMovie);
+    res.send(result).status(204);
+})
+
+
 export default router;
