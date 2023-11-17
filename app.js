@@ -9,7 +9,7 @@ app.use(express.json());
 app.use('/movies', moviesRouter);
 
 
-app.use((err, _req, res, next) => {
+app.use((err, _req, res) => {
     res.status(500).send("Uh oh! An unexpected error occured.");
 });
 

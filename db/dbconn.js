@@ -41,16 +41,24 @@ const connectToDatabase = async () => {
   }
 };
 
-try {
-  // Apply the validation rules to the grades collection
-  await db.command({
-    collMod: "movies",
-    validator: validationRules,
-    validationAction: "warn",
-  });
-  console.log("Validation rules applied successfully.");
-} catch (error) {
-  console.error("Error applying validation rules:", error);
-}
+const applyValidationRules = async () => {
+  try {
+    const db = await connectToDatabase();
+
+    // Apply the validation rules to the movies collection
+    await db.command({
+      collMod: "movies",
+      validator: validationRules,
+      validationAction: "error",
+    });
+
+    console.log("Validation rules applied successfully.");
+  } catch (error) {
+    console.error("Error applying validation rules:", error);
+  }
+};
+
+// Calling the function to apply validation rules
+applyValidationRules();
 
 export default connectToDatabase;
