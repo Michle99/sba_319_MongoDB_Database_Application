@@ -48,4 +48,25 @@ router.post('/', async (req, res) => {
 })
 
 
+/*********************************************/
+//              UPDATE MOVIE BY ID
+/*********************************************/
+router.put("/:id", async (req, res) => {
+    try {
+        const query = { _id: new ObjectId(req.params.id) };
+        const updates = {
+        $set: { type: req.body.type },
+        // $currentDate: { lastModified: true }
+        };
+        const db = await connectToDatabase();
+        let collection = db.collection("movies");
+        let result = await collection.updateOne(query, updates);
+    
+        res.send(result).status(200);
+    } catch (error) {
+        console.error("Error updating movie data:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 export default router;
