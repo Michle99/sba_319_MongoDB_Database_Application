@@ -69,4 +69,18 @@ router.put("/:id", async (req, res) => {
     }
 });
 
+
+/*********************************************/
+//              DELETE MOVIE BY ID
+/*********************************************/
+router.delete("/:id", async (req, res) => {
+    const query = { _id: new ObjectId(req.params.id) };
+
+    const db = await connectToDatabase();
+    const collection = db.collection("movies");
+    let result = await collection.deleteOne(query);
+  
+    res.send(result).status(200);
+});
+
 export default router;
