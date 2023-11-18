@@ -278,6 +278,8 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 
 <img src="./sba_319_pic/failed_validation_1.png" width="90%" alt="Failed movie validations">
 
+### Error Handling
+- If the request fails, the API will respond with an appropriate error message and status code.
 
 ## Dependencies
 - dotenv
