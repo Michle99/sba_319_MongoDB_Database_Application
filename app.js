@@ -10,7 +10,7 @@ app.use('/movies', moviesRouter);
 
 
 app.use((err, _req, res) => {
-    res.status(500).send("Uh oh! An unexpected error occured.");
+    res.status(500).send("Uh oh! An unexpected error occured.", err);
 });
 
 app.listen(PORT, () => {
