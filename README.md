@@ -309,6 +309,19 @@ DELETE http://localhost:5000/movies/573a1391f29313caabcd7db6
 
 ### FAILED VALIDATIONS REQUEST
 
+- **Validation Rules Function:**
+
+```
+// Define validation rules for the movies collection
+const validationRules = {
+  $jsonSchema: {
+    bsonType: "object",
+    required: ["plot", "genres", "type", "title", "poster", "cast", "fullplot", "runtime"],
+    // ...
+  }
+};
+```
+
 - **Validation Example REQUEST**
 
 <img src="./sba_319_pic/failed_Validation_0.png" width="90%" alt="Failed movie validations">
