@@ -221,7 +221,7 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 
 ```
 #### Post request screenshot
-<img src="./sba_319_pic/POST_REQ.png" width="60%" alt="Post Request and Response">
+<img src="./sba_319_pic/POST_REQ.png" width="80%" alt="Post Request and Response">
 
 ### Update a Movie 
 - **Endpoint:** PUT /:id
@@ -249,7 +249,7 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 ```
 
 ### PUT Request Screenshot
-<img src="./sba_319_pic/PUT_ID.png" width="60%" alt="Update new movie">
+<img src="./sba_319_pic/PUT_ID.png" width="80%" alt="Update new movie">
 
 
 ### 5. Delete a Movie
