@@ -11,7 +11,7 @@ This assessment measures your understanding of MongoDB and your capability to im
 - Create MongoDB validation rules.
 - Use MongoDB validation to ensure data consistency.
 
-## Movies API
+## Movies API Documentation
 
 The Movies API allows you to manage a collection of movies. It supports CRUD (Create, Read, Update, Delete) operations to interact with movie data.
 
@@ -24,6 +24,13 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 ### 1. Get All Movies
 - **Endpoint:** `GET /`
 - **Description:** Get a list of all movies.
+
+- **Example Usage:**
+```
+GET http://localhost:5000/movies
+
+```
+
 - **Example Response:**
 
 ```json
@@ -91,6 +98,7 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 ]
 
 ```
+---
 
 ### 2. Get a Single Movie
 
@@ -98,6 +106,13 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 - **Description:** Get details of a specific movie by ID.
 - Parameters:
     - id: Movie ID
+
+- **Example Usage:**
+```
+GET http://localhost:5000/movies/573a1391f29313caabcd7db6
+
+```
+
 - **Example Response:**
 ```json
 {
@@ -160,10 +175,18 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
   "num_mflix_comments": 0
 }
 ```
+---
 
 ### Add a New Movie
 - **Endpoint:** `GET /`
 - **Description:** Add a new movie to the collection.
+
+- **Example Usage:**
+```
+POST http://localhost:5000/movies
+
+```
+
 - **Request Body:**
 
 ```json
@@ -220,8 +243,11 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 }
 
 ```
+
 #### Post request screenshot
 <img src="./sba_319_pic/POST_REQ.png" width="80%" alt="Post Request and Response">
+
+---
 
 ### Update a Movie 
 - **Endpoint:** PUT /:id
@@ -234,6 +260,12 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 {
   "type": "ANIMES WEB SERIES"
 }
+```
+
+- **Example Usage:**
+```
+PUT http://localhost:5000/movies/573a1391f29313caabcd7db6
+
 ```
 
 - **Example Response:**
@@ -257,6 +289,13 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 - **Description:** Delete a specific movie by ID.
 - **Parameters:**
     - `id`: Movie ID
+
+- **Example Usage:**
+```
+DELETE http://localhost:5000/movies/573a1391f29313caabcd7db6
+
+```
+
 - **Example Response:**
 ```json
     {
