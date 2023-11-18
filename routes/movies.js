@@ -56,6 +56,8 @@ router.put("/:id", async (req, res) => {
         const query = { _id: new ObjectId(req.params.id) };
         const updates = {
         $set: { type: req.body.type },
+        // $push: { genres: req.body.genres },
+        // $push: { genres: { $each:  req.body.genres } }
         // $currentDate: { lastModified: true }
         };
         const db = await connectToDatabase();
