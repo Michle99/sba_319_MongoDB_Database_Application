@@ -3,7 +3,6 @@ import './loadEnv.js'
 import moviesRouter from './routes/movies.js';
 import errorHandler from './middlewares/errorMiddleware.js';
 
-
 const PORT = process.env.PORT || 4000;
 const app = express();
 

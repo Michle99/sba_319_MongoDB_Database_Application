@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     try {
        const db = await connectToDatabase();
        let collection = db.collection("movies");
-       console.log("Movies collection:", collection);
+    //    console.log("Movies collection:", collection);
        let results = await collection.find({}).limit(5).toArray();
        res.send(results).status(200);
     } catch (error) {
