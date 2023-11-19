@@ -3,7 +3,17 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Objectives](#objectives)
-3. [
+3. [Movies API Documentation](#movies-api-documentation)
+  - [Base URL](#base-url)
+  - [Get All Movies](#1-get-all-movies)
+  - [Get Single Movie](#2-get-a-single-movie)
+  - [Add a New Movie](#3-add-a-new-movie)
+  - [Update a Movie](#4-update-a-movie)
+  - [Delete a Movie](#5-delete-a-movie)
+  - [Failed Validation Request](#6-failed-validations-request)
+  - [Error Handling](#7-error-handling)
+4. [Dependencies](#dependencies)
+5. [Getting Started](#getting-started)
 
 ## Introduction
 This assessment measures your understanding of MongoDB and your capability to implement its features in a practical manner. You have creative freedom in the topic, material, and purpose of the web application you will be developing, so have fun with it! However, remember to plan the scope of your project to the timeline you have been given.
@@ -332,7 +342,7 @@ const validationRules = {
 
 <img src="./sba_319_pic/failed_validation_1.png" width="90%" alt="Failed movie validations">
 
-### Error Handling
+### 7. Error Handling
 - If the request fails, the API will respond with an appropriate error message and status code.
 
 ## Dependencies
