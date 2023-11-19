@@ -28,7 +28,6 @@ The Movies API allows you to manage a collection of movies. It supports CRUD (Cr
 - **Example Usage:**
 ```
 GET http://localhost:5000/movies
-
 ```
 
 - **Example Response:**
@@ -110,7 +109,6 @@ GET http://localhost:5000/movies
 - **Example Usage:**
 ```
 GET http://localhost:5000/movies/573a1391f29313caabcd7db6
-
 ```
 
 - **Example Response:**
@@ -184,7 +182,6 @@ GET http://localhost:5000/movies/573a1391f29313caabcd7db6
 - **Example Usage:**
 ```
 POST http://localhost:5000/movies
-
 ```
 
 - **Request Body:**
