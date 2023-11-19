@@ -1,5 +1,10 @@
 # SBA 319: MongoDB Database Application
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Objectives](#objectives)
+3. [
+
 ## Introduction
 This assessment measures your understanding of MongoDB and your capability to implement its features in a practical manner. You have creative freedom in the topic, material, and purpose of the web application you will be developing, so have fun with it! However, remember to plan the scope of your project to the timeline you have been given.
 
@@ -175,7 +180,7 @@ GET http://localhost:5000/movies/573a1391f29313caabcd7db6
 ```
 ---
 
-### Add a New Movie
+### 3. Add a New Movie
 - **Endpoint:** `GET /`
 - **Description:** Add a new movie to the collection.
 
@@ -246,7 +251,7 @@ POST http://localhost:5000/movies
 
 ---
 
-### Update a Movie 
+### 4. Update a Movie 
 - **Endpoint:** PUT /:id
 - **Description:** Update details of a specific movie by ID.
 - **Parameters:**
@@ -304,7 +309,7 @@ DELETE http://localhost:5000/movies/573a1391f29313caabcd7db6
 <img src="./sba_319_pic/DELETE.png" width="90%" alt="Delete new movie">
 
 
-### FAILED VALIDATIONS REQUEST
+### 6. FAILED VALIDATIONS REQUEST
 
 - **Validation Rules Function:**
 
