@@ -20,11 +20,11 @@ This assessment measures your understanding of MongoDB and your capability to im
 
 
 ## Objectives
-- Create a server application with Node, Express, and MongoDB.
-- Create a CRUD API using Express and MongoDB.
-- Use MongoDB indexing to make efficient queries.
-- Create MongoDB validation rules.
-- Use MongoDB validation to ensure data consistency.
+1. Create a server application with Node, Express, and MongoDB.
+2. Create a CRUD API using Express and MongoDB.
+3. Use MongoDB indexing to make efficient queries.
+4. Create MongoDB validation rules.
+5. Use MongoDB validation to ensure data consistency.
 
 ## Movies API Documentation
 
