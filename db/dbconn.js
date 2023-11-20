@@ -1,10 +1,12 @@
 import { MongoClient } from "mongodb";
 import '../loadEnv.js'
 
-
-const connectionString = process.env.MONGO_URI || "";
-
+let connectionString = process.env.MONGO_URI || "";
 const client = new MongoClient(connectionString);
+
+if (process.env.NODE_ENV === "testing") {
+  connectionString = process.env.MONGO_URI;
+}
 
 // Define validation rules for the db
 const validationRules = {
