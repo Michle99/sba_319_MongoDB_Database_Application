@@ -7,3 +7,5 @@ const port = process.env.PORT || 4000;
 const app = createExpressApp();
 
 startServer(app, port);
+
+export default app;
