@@ -5,7 +5,7 @@ import { ObjectId } from 'mongodb';
 export const getAllMovies = async (req, res) => {
     try {
       const db = await connectToDatabase();
-      let collection = db.collection("movies");
+      let collection = db.collection("movies_testing");
       let results = await collection.find({}).limit(5).toArray();
       res.send(results).status(200);
     } catch (error) {
@@ -17,7 +17,7 @@ export const getAllMovies = async (req, res) => {
 // Get movie by ID
 export const getMovieById = async (req, res) => {
     const db = await connectToDatabase();
-    let collection = db.collection("movies");
+    let collection = db.collection("movies_testing");
     let query = { _id: new ObjectId(req.params.id) };
     let result = await collection.findOne(query);
   
@@ -30,7 +30,7 @@ export const getMovieById = async (req, res) => {
 // Create a new movie
 export const createMovie = async (req, res) => {
     const db = await connectToDatabase();
-    let collection = db.collection("movies");
+    let collection = db.collection("movies_testing");
     let newMovie = req.body;
     newMovie.date = new Date();
     let result = await collection.insertOne(newMovie);
@@ -49,7 +49,7 @@ export const updateMovie = async (req, res) => {
         // $currentDate: { lastModified: true }
       };
       const db = await connectToDatabase();
-      let collection = db.collection("movies");
+      let collection = db.collection("movies_testing");
       let result = await collection.updateOne(query, updates);
   
       res.send(result).status(200);
@@ -65,7 +65,7 @@ export const deleteMovie = async (req, res) => {
     const query = { _id: new ObjectId(req.params.id) };
   
     const db = await connectToDatabase();
-    const collection = db.collection("movies");
+    const collection = db.collection("movies_testing");
     let result = await collection.deleteOne(query);
   
     res.send(result).status(200);

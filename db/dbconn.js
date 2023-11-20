@@ -49,7 +49,7 @@ const applyValidationRules = async () => {
 
     // Apply the validation rules to the movies collection
     await db.command({
-      collMod: "movies",
+      collMod: "movies_testing",
       validator: validationRules,
       validationAction: "error",
     });
