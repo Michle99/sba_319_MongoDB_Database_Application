@@ -16,6 +16,7 @@ describe("Movies", () => {
     let movieId;
 
     before(async () => {
+        // Connect to database before each test,i.e., "describe() test suite"
         const db = await connectToDatabase();
         collection = db.collection("movies_testing");
     });
