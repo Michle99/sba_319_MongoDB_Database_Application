@@ -112,31 +112,31 @@ describe("Movies", () => {
     
 
     // PUT route
-    // describe('PUT /movies/:id', () => {
-    //     it('should update a movie by ID', (done) => {
-    //         const updatedData = {
-    //             title: "That Time I got Reincarnated as a Slime 2",
-    //         };
+    describe('PUT /movies/:id', () => {
+        it('should update a movie by ID', (done) => {
+            const updatedData = {
+                title: "That Time I got Reincarnated as a Slime 2",
+            };
 
-    //         chai.request(expressApp)
-    //             .put(`/movies/${movieId}`)
-    //             .send(updatedData)
-    //             .end((err, res) => {
-    //                 // console.log("Response in PUT:", res.body)
-    //                 // console.log("PUT Response End")
-    //                 if (err) {
-    //                     console.error("Error occurred while updating movie:", err);
-    //                     done(err);
-    //                     return;
-    //                 }
-    //                 res.should.have.status(200);
-    //                 res.body.should.be.a('object');
-    //                 res.body.should.have.property('message').eql('Movie successfully updated!');
-    //                 res.body.updatedMovie.should.have.property('title');
-    //                 done();
-    //             });
-    //     });
-    // });
+            chai.request(expressApp)
+                .put(`/movies/${movieId}`)
+                .send(updatedData)
+                .end((err, res) => {
+                    console.log("Response data in PUT:", res.body)
+                    console.log("PUT Response End")
+                    if (err) {
+                        console.error("Error occurred while updating movie:", err);
+                        done(err);
+                        return;
+                    }
+                    res.should.have.status(200);
+                    res.body.movie.should.be.a('object');
+                    res.body.should.have.property('message').eql('Movie successfully updated!');
+                    res.body.movie.should.have.property('title');
+                    done();
+                });
+        });
+    });
     
     // DELETE route
     // describe('DELETE /movies/:id', () => {

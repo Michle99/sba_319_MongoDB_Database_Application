@@ -53,8 +53,8 @@ export const createMovie = async (newMovie) => {
     // newMovie.date = new Date();
     let result = await collection.insertOne(newMovie);
 
-    console.log("data of Result in createMovie:", result);
-    console.log("newMovie data in createMovie:", newMovie);
+    // console.log("data of Result in createMovie:", result);
+    // console.log("newMovie data in createMovie:", newMovie);
     return newMovie;
     // res.status(200).json({ message: "Movie successfully added!", newMovie, result });
   } catch (error) {
@@ -63,36 +63,33 @@ export const createMovie = async (newMovie) => {
   }
 };
 
-  
 
-// Update movie by ID
-export const updateMovie = async (req, res) => {
+export const updateMovie = async (movieId, updatedData) => {
   try {
-    const query = { _id: new ObjectId(req.params.id) };
-    const updates = {
-      $set: { title: req.body.title },
-      // $push: { genres: req.body.genres },
-      // $push: { genres: { $each:  req.body.genres } }
-      // $currentDate: { lastModified: true }
-    };
-    const db = await connectToDatabase();
-    let collection = db.collection("movies_testing");
-    let result = await collection.updateOne(query, updates);
-    if (result.matchedCount === 0) {
-      res.status(404).json({ message: 'Movie not found.' });
-    } else {
-      const getMovie = await collection.findOne(query);
-      res.status(200).json({ message: 'Movie successfully updated!', updatedMovie: getMovie });
-  }
+      const db = await connectToDatabase();
+      let collection = db.collection("movies_testing");
+      if (!ObjectId.isValid(movieId)) {
+        return null;
+      }
+      const query = { _id: new ObjectId(movieId) };
+      let update = { $set: updatedData };
+      // let updateArrays =  { $push: updatedData };
+      let result = await collection.findOneAndUpdate(query, update, { returnDocument: 'after' });
+      console.log("data of 'result' from the updateMovie controller:", result);
+      if (result) {
+        return result;
+      } else {
+        throw new Error('Movie not found.');
+      }
   } catch (error) {
-    console.error("Error updating movie data:", error);
-    res.status(500).send("Internal Server Error");
+      console.error("Error updating movie:", error);
+      throw error;
   }
 };
 
 
 // Delete movie by ID
-export const deleteMovie = async (req, res) => {
+export const deleteMovie = async (id) => {
   try {
     const query = { _id: new ObjectId(req.params.id) };
     const db = await connectToDatabase();
