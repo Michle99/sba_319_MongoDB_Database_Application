@@ -19,10 +19,9 @@ export const getMovieById = async (req, res) => {
     const db = await connectToDatabase();
     let collection = db.collection("movies_testing");
     let query = { _id: new ObjectId(req.params.id) };
-    let result = await collection.findOne(query);
     let getMovie = await collection.findOne(query);
-    if (!result) res.send("Movie Not found").status(404);
-    else res.json({ message: "Movie successfully Retrieved!", getMovie, result }).status(204);
+    if (!getMovie) res.send("Movie Not found").status(404);
+    else res.json({ message: "Movie successfully Retrieved!", getMovie }).status(204);
 };
 
 
@@ -72,7 +71,8 @@ export const deleteMovie = async (req, res) => {
   
     const db = await connectToDatabase();
     const collection = db.collection("movies_testing");
-    let result = await collection.deleteOne(query);
+    let deletedMovie = await collection.deleteOne(query);
+    let getDeletedMovie = collection.findOne(query);
   
-    res.send(result).status(200);
+    res.json({ message: "Movie successfully deleted!", getDeletedMovie, deletedMovie }).status(204);
 };

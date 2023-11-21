@@ -91,13 +91,12 @@ describe("Movies", () => {
     /******************************************************************/
     describe('/GET/:id Move', () => {
         it('it should GET a movie by the given id', (done) => {
-           
            chai
                .request(expressApp)
                .get(`/movies/${movieId}`)
                .end((err, res) => {
-                console.log("Response:", res.body)
-                console.log("Response End")
+                // console.log("Response:", res.body)
+                // console.log("Response End")
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('message').eql('Movie successfully Retrieved!');
@@ -119,6 +118,8 @@ describe("Movies", () => {
                 .put(`/movies/${movieId}`)
                 .send(updatedData)
                 .end((err, res) => {
+                    // console.log("Response in PUT:", res.body)
+                    // console.log("PUT Response End")
                     if (err) {
                         console.error("Error occurred while updating movie:", err);
                         done(err);
@@ -133,6 +134,29 @@ describe("Movies", () => {
         });
     });
     
+    // DELETE route
+    describe('DELETE /movies/:id', () => {
+        it('should delete a movie by ID', (done) => {
+            chai.request(expressApp)
+                .delete(`/movies/${movieId}`)
+                .end((err, res) => {
+                    console.log("Response in Delete:", res.body)
+                    console.log("Delete Response End")
+                    if (err) {
+                        console.error("Error occurred while deleting movie:", err);
+                        done(err);
+                        return;
+                    }
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property('message').eql('Movie successfully deleted!');
+                    res.body.getDeletedMovie.should.be.a('object').that.is.empty;
+                    res.body.deletedMovie.should.have.property('acknowledged').eq(true);
+                    res.body.deletedMovie.should.have.property('deletedCount').eq(1);
+                    done();
+                });
+        });
+    });
 
     // end of parent block
 });
