@@ -45,7 +45,7 @@ export const updateMovie = async (req, res) => {
   try {
     const query = { _id: new ObjectId(req.params.id) };
     const updates = {
-      $set: { type: req.body.type },
+      $set: { title: req.body.title },
       // $push: { genres: req.body.genres },
       // $push: { genres: { $each:  req.body.genres } }
       // $currentDate: { lastModified: true }
@@ -53,9 +53,12 @@ export const updateMovie = async (req, res) => {
     const db = await connectToDatabase();
     let collection = db.collection("movies_testing");
     let result = await collection.updateOne(query, updates);
-    let updatedMovie = await collection.findOne(query);
-
-    res.json({ message: "Movie successfully added!", updatedMovie, result }).status(204);
+    if (result.matchedCount === 0) {
+      res.status(404).json({ message: 'Movie not found.' });
+    } else {
+      const getMovie = await collection.findOne(query);
+      res.status(200).json({ message: 'Movie successfully updated!', updatedMovie: getMovie });
+  }
   } catch (error) {
     console.error("Error updating movie data:", error);
     res.status(500).send("Internal Server Error");

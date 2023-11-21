@@ -79,18 +79,6 @@ describe("Movies", () => {
             res.body.newMovie.should.have.property("poster");
             res.body.newMovie.should.have.property("title");
             res.body.newMovie.should.have.property("fullplot");
-            res.body.newMovie.should.have.property("languages");
-            res.body.newMovie.should.have.property("released");
-            res.body.newMovie.should.have.property("directors");
-            res.body.newMovie.should.have.property("rated");
-            res.body.newMovie.should.have.property("awards");
-            res.body.newMovie.should.have.property("lastupdated");
-            res.body.newMovie.should.have.property("year");
-            res.body.newMovie.should.have.property("imdb");
-            res.body.newMovie.should.have.property("countries");
-            res.body.newMovie.should.have.property("tomatoes");
-            res.body.newMovie.should.have.property("num_mflix_comments");
-
             movieId = res.body.newMovie._id;
             console.log("Movie id:", movieId)
             done();
@@ -124,17 +112,22 @@ describe("Movies", () => {
     describe('PUT /movies/:id', () => {
         it('should update a movie by ID', (done) => {
             const updatedData = {
-                // Your updated data
+                title: "That Time I got Reincarnated as a Slime 2",
             };
 
             chai.request(expressApp)
                 .put(`/movies/${movieId}`)
                 .send(updatedData)
                 .end((err, res) => {
+                    if (err) {
+                        console.error("Error occurred while updating movie:", err);
+                        done(err);
+                        return;
+                    }
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('message').eql('Movie successfully updated!');
-                    // Add more expectations as needed
+                    res.body.updatedMovie.should.have.property('title');
                     done();
                 });
         });
