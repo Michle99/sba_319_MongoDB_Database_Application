@@ -7,7 +7,7 @@ export const getAllMovies = async (req, res) => {
       const db = await connectToDatabase();
       let collection = db.collection("movies_testing");
       let results = await collection.find().limit(5).toArray();
-      console.log("Results:", results);
+      // console.log("Results:", results);
       return results;
       // res.json({results}).status(200);
     } catch (error) {
@@ -18,21 +18,22 @@ export const getAllMovies = async (req, res) => {
 };
 
 // Get movie by ID
-export const getMovieById = async (req, res) => {
+export const getMovieById = async (id) => {
   try {
     const db = await connectToDatabase();
     const collection = db.collection("movies_testing");
-    const query = { _id: new ObjectId(req.params.id) };
+    const query = { _id: new ObjectId(id) };
     const getMovie = await collection.findOne(query);
-
-    if (!getMovie) {
-      res.status(404).send("Movie Not found");
-      return;
-    }
-    res.status(200).json({ message: "Movie successfully Retrieved!", getMovie });
+    return getMovie;
+    // if (!getMovie) {
+    //   res.status(404).send("Movie Not found");
+    //   return;
+    // }
+    // res.status(200).json({ message: "Movie successfully Retrieved!", getMovie });
   } catch (error) {
     console.error("Error while getting movie by ID:", error);
-    res.status(500).send("Internal Server Error");
+    throw error;
+    // res.status(500).send("Internal Server Error");
   }
 };
 

@@ -33,7 +33,7 @@ describe("Movies", () => {
             .request(expressApp)
             .get("/movies")
             .end((err, res) => {
-                console.log("Res.body:", res.body);
+                // console.log("Res.body:", res.body);
             res.should.have.status(200);
             res.body.movies.should.be.a("array");
             res.body.movies.length.should.be.eql(0);
@@ -99,13 +99,13 @@ describe("Movies", () => {
                .request(expressApp)
                .get(`/movies/${movieId}`)
                .end((err, res) => {
-                // console.log("Response:", res.body)
-                // console.log("Response End")
+                console.log("Response:", res.body)
+                console.log("Response End")
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('message').eql('Movie successfully Retrieved!');
-                    res.body.should.have.property('getMovie');
-                    res.body.getMovie.should.have.property('title');
+                    res.body.should.have.property('movie');
+                    res.body.movie.should.have.property('title');
                     done();
                 });
         });

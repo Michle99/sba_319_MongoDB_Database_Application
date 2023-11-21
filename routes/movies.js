@@ -11,7 +11,7 @@ const baseURL = process.env.BASE_URL;
 router.get('/', async (req, res) => {
     try {
         const movies = await moviesController.getAllMovies(req, res);
-        console.log("Movies data from the routes/movies:", movies);
+        // console.log("Movies data from the routes/movies:", movies);
         if (movies) {
             const moviesWithLinks = movies.map(movie => {
                 return {
@@ -37,7 +37,34 @@ router.get('/', async (req, res) => {
 /*********************************************/
 //              GET MOVIES BY ID
 /*********************************************/
-router.get('/:id', moviesController.getMovieById);
+router.get('/:id', async (req, res) => {
+    try {
+        const movieId = req.params.id;
+        if (!movieId) {
+            return res.status(400).json({ error: 'Invalid movie ID' });
+        }
+
+        const movie = await moviesController.getMovieById(movieId);
+        console.log("Movies data from the GET/:id:", movie);
+        if (!movie) {
+            return res.status(404).json({ error: 'Movie not found' });
+        }
+
+        const movieWithLinks = {
+            ...movie,
+            links: [
+                { rel: 'self', href: `${baseURL}/movies/${movie._id}` },
+                { rel: 'update', href: `${baseURL}/movies/${movie._id}` },
+                { rel: 'delete', href: `${baseURL}/movies/${movie._id}` },
+            ],
+        };
+
+        res.json({ movie: movieWithLinks, message: "Movie successfully Retrieved!" });
+    } catch (error) {
+        console.error('Error while getting movie by ID:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 
 /*********************************************/
