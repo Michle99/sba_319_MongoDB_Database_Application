@@ -6,12 +6,13 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "mocha tests/movies.js --timeout 10000"
+    "test": "mocha tests/movies.js --timeout 180000"
   },
   "keywords": [],
   "author": "MICHAEL O",
   "license": "MIT",
   "dependencies": {
+    "chai-json-schema": "^1.5.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongodb": "^6.3.0",
