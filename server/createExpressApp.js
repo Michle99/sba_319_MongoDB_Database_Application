@@ -15,7 +15,7 @@ const createExpressApp = () => {
     app.use(
         '/api-docs', 
         swaggerUi.serve,
-        swaggerUi.setup(swaggerSpecs)
+        swaggerUi.setup(swaggerSpecs, { explorer: true })
     );
 
     app.use('/movies', moviesRouter);

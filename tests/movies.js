@@ -33,9 +33,10 @@ describe("Movies", () => {
             .request(expressApp)
             .get("/movies")
             .end((err, res) => {
+                console.log("Res.body:", res.body);
             res.should.have.status(200);
-            res.body.should.be.a("array");
-            res.body.length.should.be.eql(0);
+            res.body.movies.should.be.a("array");
+            res.body.movies.length.should.be.eql(0);
             done();
             });
         });

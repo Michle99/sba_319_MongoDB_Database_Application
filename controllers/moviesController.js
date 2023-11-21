@@ -7,10 +7,13 @@ export const getAllMovies = async (req, res) => {
       const db = await connectToDatabase();
       let collection = db.collection("movies_testing");
       let results = await collection.find().limit(5).toArray();
-      res.send(results).status(200);
+      console.log("Results:", results);
+      return results;
+      // res.json({results}).status(200);
     } catch (error) {
       console.error("Error fetching movies:", error);
-      res.status(500).send("Internal Server Error");
+      // res.status(500).send("Internal Server Error");
+      throw error;
     }
 };
 
