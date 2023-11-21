@@ -34,7 +34,6 @@ export const getMovieById = async (req, res) => {
 };
 
 
-
 // Create a new movie
 export const createMovie = async (req, res) => {
   try {
