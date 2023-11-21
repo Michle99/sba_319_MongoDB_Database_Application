@@ -20,9 +20,9 @@ export const getMovieById = async (req, res) => {
     let collection = db.collection("movies_testing");
     let query = { _id: new ObjectId(req.params.id) };
     let result = await collection.findOne(query);
-  
+    let getMovie = await collection.findOne(query);
     if (!result) res.send("Movie Not found").status(404);
-    else res.send(result).status(200);
+    else res.json({ message: "Movie successfully Retrieved!", getMovie, result }).status(204);
 };
 
 
@@ -34,8 +34,8 @@ export const createMovie = async (req, res) => {
   let newMovie = req.body;
   newMovie.date = new Date();
   let result = await collection.insertOne(newMovie);
-  console.log("Contents of result:", result)
-  console.log("Contents of newMovie:", newMovie)
+  // console.log("Contents of result:", result)
+  // console.log("Contents of newMovie:", newMovie)
   res.json({ message: "Movie successfully added!", newMovie, result }).status(204);
 };
   
