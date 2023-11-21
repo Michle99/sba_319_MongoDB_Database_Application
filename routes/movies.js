@@ -45,7 +45,7 @@ router.get('/:id', async (req, res) => {
         }
 
         const movie = await moviesController.getMovieById(movieId);
-        console.log("Movies data from the GET/:id:", movie);
+        // console.log("Movies data from the Router GET/:id:", movie);
         if (!movie) {
             return res.status(404).json({ error: 'Movie not found' });
         }
@@ -70,7 +70,24 @@ router.get('/:id', async (req, res) => {
 /*********************************************/
 //              POST NEW MOVIE 
 /*********************************************/
-router.post('/', moviesController.createMovie);
+router.post('/', async (req, res) => {
+    try {
+        const newMovie = await moviesController.createMovie(req.body);
+        console.log("New Movie added data from the POST router:", newMovie);
+        const newMovieWithLinks = {
+            ...newMovie,
+            links: [
+                { rel: 'self', href: `${baseURL}/movies/${newMovie._id}` },
+                { rel: 'update', href: `${baseURL}/movies/${newMovie._id}` },
+                { rel: 'delete', href: `${baseURL}/movies/${newMovie._id}` },
+            ],
+        };
+        res.json({ movie: newMovieWithLinks, message: 'Movie successfully added!' });
+    } catch (error) {
+        console.error('Error while creating a new movie:', error);
+        res.status(500).json({ error: { title: 'Internal Server Error', required: true } });
+    }
+});
 
 
 /*********************************************/
