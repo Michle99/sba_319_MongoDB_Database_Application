@@ -32,24 +32,6 @@ const validationRules = {
   }
 };
 
-// For testing, using comment
-// const validationRules = {
-//   $jsonSchema: {
-//     bsonType: "object",
-//     required: ["name", "email", "text", "date"],
-//     properties: {
-//       name: { bsonType: "string" },
-//       email: { 
-//         bsonType: "string",
-//         pattern: "^\\S+@\\S+\\.\\S+$", // Basic email pattern
-//       },
-//       movie_id: { bsonType: "objectId" },
-//       text: { bsonType: "string" },
-//       date: { bsonType: "date" }
-//     }
-//   }
-// };
-
 
 const connectToDatabase = async () => {
   try {
