@@ -6,19 +6,17 @@ const router = express.Router();
 const baseURL = process.env.BASE_URL;
 /**
  * @openapi
- * tags:
- *    name: Movie
- *    description: The Movie API
  * /movies:
  *  get:
  *    summary: Get all movies
+ *    tags: [Movie]
  *    description: Retrieve a list of all movies.
  *    responses:
  *      '200':
  *        description: Successful response
  *        content:
  *          application/json:
- *            example: { movies: [{movie1}, {movie2}], message: 'Movies retrieved successfully' }
+ *            example: { movies: [{movie1: {}}, {movie2: {}}], message: 'Movies retrieved successfully' }
  */
 router.get('/', async (req, res) => {
     try {
@@ -48,12 +46,10 @@ router.get('/', async (req, res) => {
 
 /**
  * @openapi
- * tags:
- *    name: Movie
- *    description: The Movie API
  * /movies/{id}:
  *  get:
  *    summary: Get a movie by ID
+ *    tags: [Movie]
  *    description: Retrieve a movie by its ID.
  *    parameters:
  *      - name: id
@@ -107,12 +103,10 @@ router.get('/:id', async (req, res) => {
 
 /**
  * @openapi
- * tags:
- *    name: Movie
- *    description: The Movie API
  * /movies:
  *  post:
  *    summary: Create a new movie
+ *    tags: [Movie]
  *    description: Create a new movie entry.
  *    requestBody:
  *      content:
@@ -153,13 +147,11 @@ router.post('/', async (req, res) => {
 
 
 /**
- * @openapi
- * tags:
- *    name: Movie
- *    description: The Movie API
- * /movies:
+ * @swagger
+ * /movies/{id}:
  *  put:
  *    summary: Update a movie by ID
+ *    tags: [Movie]
  *    description: Update an existing movie by its ID.
  *    parameters:
  *      - name: id
@@ -170,11 +162,11 @@ router.post('/', async (req, res) => {
  *          type: string
  *        example: '123'
  *    requestBody:
+ *      required: true
  *      content:
  *        application/json:
  *           schema:
  *             $ref: '#/components/schemas/Movie'
- *      required: true
  *    responses:
  *      '200':
  *        description: Movie updated successfully
@@ -231,7 +223,38 @@ router.put('/:id', async (req, res) => {
 });
 
              
-/******************* DELETE MOVIE BY ID **********/
+/**
+ * @swagger
+ * /movies:
+ *  delete:
+ *    summary: Delete a movie by ID
+ *    tags: [Movie]
+ *    description: Delete a movie by its ID.
+ *    parameters:
+ *      - name: id
+ *        in: path
+ *        description: Movie ID
+ *        required: true
+ *        schema:
+ *          type: string
+ *        example: '123'
+ *    responses:
+ *      '200':
+ *        description: Movie deleted successfully
+ *        content:
+ *          application/json:
+ *            example: { movie: deletedMovie, message: 'Movie deleted successfully' }
+ *      '404':
+ *        description: Movie not found
+ *        content:
+ *          application/json:
+ *            example: { error: 'Movie not found' }
+ *      '500':
+ *        description: Internal Server Error
+ *        content:
+ *          application/json:
+ *            example: { error: 'Internal Server Error' }
+ */
 router.delete('/:id', async (req, res) => {
     try {
         const movieId = req.params.id;
