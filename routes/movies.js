@@ -105,8 +105,33 @@ router.get('/:id', async (req, res) => {
 });
 
 
-
-/************POST NEW MOVIE*********/
+/**
+ * @openapi
+ * tags:
+ *    name: Movie
+ *    description: The Movie API
+ * /movies:
+ *  post:
+ *    summary: Create a new movie
+ *    description: Create a new movie entry.
+ *    requestBody:
+ *      content:
+ *        application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Movie'
+ *      required: true
+ *    responses:
+ *      '200':
+ *        description: Movie created successfully
+ *        content:
+ *          application/json:
+ *            example: { movie: newMovie, message: 'Movie created successfully' }
+ *      '400':
+ *        description: Invalid request or missing data
+ *        content:
+ *          application/json:
+ *            example: { error: 'Invalid request or missing data' }
+ */
 router.post('/', async (req, res) => {
     try {
         const newMovie = await moviesController.createMovie(req.body);
