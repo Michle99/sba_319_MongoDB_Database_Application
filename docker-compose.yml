@@ -1,0 +1,13 @@
+version: "1.0"
+
+services:
+    app:
+        container_name: movie_api_express_app
+        image: movie_api_express_app
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: base
+        ports:
+            - "${PORT}:${PORT}"
