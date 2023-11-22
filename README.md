@@ -12,8 +12,9 @@
    - [Delete a Movie](#5-delete-a-movie)
    - [Failed Validation Request](#6-failed-validations-request)
    - [Error Handling](#7-error-handling)
-4. [Dependencies](#dependencies)
-5. [Getting Started](#getting-started)
+4. [Swagger Movie API Documentation](#)
+5. [Dependencies](#dependencies)
+6. [Getting Started](#getting-started)
 
 ## Introduction
 This assessment measures your understanding of MongoDB and your capability to implement its features in a practical manner. You have creative freedom in the topic, material, and purpose of the web application you will be developing, so have fun with it! However, remember to plan the scope of your project to the timeline you have been given.
@@ -377,11 +378,10 @@ https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970
 https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970/207bb5e9-a06b-4df0-8109-0f1315fbef10
 
 ### Update an existing Movie
-<video src="./sba_319_pic/update_a_movie.mp4" width="600" height="240" controls></video>
+https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970/72c681a4-c8ca-4d6c-8733-29283fe31115
 
 ### Delete an existing Movie
-<video src="./sba_319_pic/delete_a_movie.mp4" width="600" height="240" controls></video> 
-
+https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970/4babab45-57f9-4e94-af9e-4d00721c10d8
 
 ## Dependencies
 - chai
