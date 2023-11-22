@@ -112,6 +112,11 @@ GET http://localhost:5000/movies
 ]
 
 ```
+#### Get All Movies Screenshots
+
+<img src="./sba_319_pic/GET_0.png" width="90%" alt="GET Screenshot 1">
+<img src="./sba_319_pic/GET.png" width="90%" alt="GET Screenshot 2">
+
 ---
 
 ### 2. Get a Single Movie
@@ -188,6 +193,10 @@ GET http://localhost:5000/movies/573a1391f29313caabcd7db6
   "num_mflix_comments": 0
 }
 ```
+#### Get a Single Movie Screenshots
+<img src="./sba_319_pic/GET_ID_0.png" width="90%" alt="Get a single movie screenshot 0">
+<img src="./sba_319_pic/GET_ID_1.png" width="90%" alt="Get a single movie screenshot 1">
+
 ---
 
 ### 3. Add a New Movie
