@@ -1,4 +1,6 @@
-# SBA 319: MongoDB Database Application
+<div align="center">
+  <h1>SBA 319: MongoDB Database Application</h1>
+</div>
 
 ## Table of Contents
 1. [Introduction](#introduction)
