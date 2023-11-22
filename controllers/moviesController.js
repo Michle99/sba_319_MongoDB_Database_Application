@@ -44,7 +44,7 @@ export const createMovie = async (newMovie) => {
     await collection.insertOne(newMovie);
 
     // console.log("data of Result in createMovie:", result);
-    console.log("newMovie data in createMovie:", newMovie);
+    // console.log("newMovie data in createMovie:", newMovie);
     return newMovie;
   } catch (error) {
     console.error("Error while creating a new movie:", error);
@@ -87,7 +87,7 @@ export const deleteMovie = async (movieId) => {
     }
     const query = { _id: new ObjectId(movieId) };
     const deletedMovie = await collection.deleteOne(query);
-    console.log("------------Deleted Movie data in the deleteMovie controller:\n", deletedMovie);
+    // console.log("------------Deleted Movie data in the deleteMovie controller:\n", deletedMovie);
 
     return deletedMovie;
   } catch (error) {

@@ -22,7 +22,7 @@ const createExpressApp = () => {
         ...swaggerAPIModel.components
     };
     const swaggerSpecs = swaggerJSDoc(swaggerOptionsConfig);
-
+    console.log('Swagger Options Config:', swaggerSpecs);
     app.use(express.json());
 
     app.use(

@@ -144,9 +144,9 @@ describe("Movies", () => {
             chai.request(expressApp)
                 .delete(`/movies/${movieId}`)
                 .end((err, res) => {
-                    console.log("-------Delete Response BEGIN------------")
-                    console.log("Response in DELETE /movies/:id:", res.body)
-                    console.log("----------Delete Response END------------")
+                    // console.log("-------Delete Response BEGIN------------")
+                    // console.log("Response in DELETE /movies/:id:", res.body)
+                    // console.log("----------Delete Response END------------")
                     if (err) {
                         console.error("Error occurred while deleting movie:", err);
                         done(err);
@@ -155,7 +155,6 @@ describe("Movies", () => {
                     res.should.have.status(200);
                     res.body.movie.should.be.a('object');
                     res.body.should.have.property('message').eql('Movie successfully deleted!');
-                    // res.body.should.be.a('object').that.is.empty;
                     res.body.movie.should.have.property('acknowledged').eq(true);
                     res.body.movie.should.have.property('deletedCount').eq(1);
                     done();

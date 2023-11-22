@@ -5,8 +5,11 @@ import '../loadEnv.js'
 const router = express.Router();
 const baseURL = process.env.BASE_URL;
 /**
- * @swaggger
- * /:
+ * @openapi
+ * tags:
+ *    name: Movie
+ *    description: The Movie API
+ * /movies:
  *  get:
  *    summary: Get all movies
  *    description: Retrieve a list of all movies.
@@ -15,7 +18,7 @@ const baseURL = process.env.BASE_URL;
  *        description: Successful response
  *        content:
  *          application/json:
- *            example: { movies: [movie1, movie2], message: 'Movies retrieved successfully' }
+ *            example: { movies: [{movie1}, {movie2}], message: 'Movies retrieved successfully' }
  */
 router.get('/', async (req, res) => {
     try {
@@ -43,7 +46,35 @@ router.get('/', async (req, res) => {
 });
 
 
-/************* GET MOVIES BY ID********************/
+/**
+ * @openapi
+ * tags:
+ *    name: Movie
+ *    description: The Movie API
+ * /movies/{id}:
+ *  get:
+ *    summary: Get a movie by ID
+ *    description: Retrieve a movie by its ID.
+ *    parameters:
+ *      - name: id
+ *        in: path
+ *        description: Movie ID
+ *        required: true
+ *        schema:
+ *          type: string
+ *        example: '123'
+ *    responses:
+ *      '200':
+ *        description: Successful response
+ *        content:
+ *          application/json:
+ *            example: { movie: {movie1: {}}, message: 'Movie retrieved successfully' }
+ *      '404':
+ *        description: Movie not found
+ *        content:
+ *          application/json:
+ *            example: { error: 'Movie not found' }
+ */
 router.get('/:id', async (req, res) => {
     try {
         const movieId = req.params.id;
