@@ -41,9 +41,9 @@ export const createMovie = async (newMovie) => {
   try {
     const db = await connectToDatabase();
     const collection = db.collection("movies_testing");
-    let result = await collection.insertOne(newMovie);
+    await collection.insertOne(newMovie);
 
-    console.log("data of Result in createMovie:", result);
+    // console.log("data of Result in createMovie:", result);
     console.log("newMovie data in createMovie:", newMovie);
     return newMovie;
   } catch (error) {
