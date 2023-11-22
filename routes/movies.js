@@ -5,9 +5,16 @@ import '../loadEnv.js'
 const router = express.Router();
 const baseURL = process.env.BASE_URL;
 
-/*********************************************/
-//              GET ALL MOVIES
-/*********************************************/
+/***
+ * 
+ * 
+ * 
+ */
+
+
+
+
+/*************** GET ALL MOVIES *************/
 router.get('/', async (req, res) => {
     try {
         const movies = await moviesController.getAllMovies(req, res);
@@ -34,9 +41,7 @@ router.get('/', async (req, res) => {
 });
 
 
-/*********************************************/
-//              GET MOVIES BY ID
-/*********************************************/
+/************* GET MOVIES BY ID********************/
 router.get('/:id', async (req, res) => {
     try {
         const movieId = req.params.id;
@@ -67,9 +72,8 @@ router.get('/:id', async (req, res) => {
 });
 
 
-/*********************************************/
-//              POST NEW MOVIE 
-/*********************************************/
+
+/************POST NEW MOVIE*********/
 router.post('/', async (req, res) => {
     try {
         const newMovie = await moviesController.createMovie(req.body);
@@ -90,9 +94,7 @@ router.post('/', async (req, res) => {
 });
 
 
-/*********************************************/
-//              UPDATE MOVIE BY ID
-/*********************************************/
+/****************UPDATE MOVIE BY ID*********************/            
 router.put('/:id', async (req, res) => {
     const updatedMovie = req.body;
     // console.log("updateMovie data in the PUT router:", updatedMovie);
@@ -131,10 +133,8 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-
-/*********************************************/
-//              DELETE MOVIE BY ID
-/*********************************************/
+             
+/******************* DELETE MOVIE BY ID **********/
 router.delete('/:id', async (req, res) => {
     try {
         const movieId = req.params.id;

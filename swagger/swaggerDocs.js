@@ -24,3 +24,30 @@ export const swaggerOptionsConfig = {
     },
     apis: ["../routes/*.js"],
 };
+
+export const swaggerAPIModel = {
+  /***
+   *  @swagger
+   * components:
+   *    schemas:
+   *      Movie:
+   *        type: object
+   *        required:
+   *          - plot
+   *          - genres
+   *          - type
+   *          - title
+   *          - poster
+   *          - cast
+   *          - fullplot
+   *          - runtime
+   *        properties
+   *          id:
+   *            type: string
+   *            description: The auto-generated id of the movie
+   *          plot:
+   *            type: string
+   *            description: The plot of the movie
+   *          
+   */
+}
