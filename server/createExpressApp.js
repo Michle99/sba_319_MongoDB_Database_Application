@@ -1,5 +1,5 @@
 import express from 'express';
-import moviesRouter from '../routes/movies.js';
+import allMoviesRouters from '../routes/index.js';
 import errorHandler from '../middlewares/errorMiddleware.js';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express'
@@ -31,7 +31,7 @@ const createExpressApp = () => {
         swaggerUi.setup(swaggerSpecs, { explorer: true })
     );
 
-    app.use('/movies', moviesRouter);
+    app.use('/api', allMoviesRouters);
 
     app.use(errorHandler);
     

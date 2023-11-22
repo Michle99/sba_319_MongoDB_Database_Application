@@ -4,6 +4,7 @@ import '../loadEnv.js'
 
 const router = express.Router();
 const baseURL = process.env.BASE_URL;
+
 /**
  * @openapi
  * /movies:
