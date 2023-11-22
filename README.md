@@ -354,6 +354,11 @@ const validationRules = {
 ### 7. Error Handling
 - If the request fails, the API will respond with an appropriate error message and status code.
 
+
+### Swagger API Movie Documentation
+
+
+
 ## Dependencies
 - chai
 - chai-http
