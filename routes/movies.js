@@ -225,7 +225,7 @@ router.put('/:id', async (req, res) => {
              
 /**
  * @swagger
- * /movies:
+ * /movies/{id}:
  *  delete:
  *    summary: Delete a movie by ID
  *    tags: [Movie]
