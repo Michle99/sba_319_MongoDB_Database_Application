@@ -33,7 +33,7 @@ describe("Movies", () => {
             .request(expressApp)
             .get("/movies")
             .end((err, res) => {
-                console.log("Res.body in GET:", res.body);
+                // console.log("Res.body in GET:", res.body);
             res.should.have.status(200);
             res.body.movies.should.be.a("array");
             res.body.movies.length.should.be.eql(0);
@@ -51,7 +51,7 @@ describe("Movies", () => {
             .post("/movies")
             .send(missingTitleMovieData)
             .end((err, res) => {
-                console.log("Res body in POST error:", res.body);
+                // console.log("Res body in POST error:", res.body);
                 res.should.have.status(500);
                 res.body.should.be.a("object");
                 if ('error' in res.body) {
@@ -73,7 +73,7 @@ describe("Movies", () => {
             .send(testMovieData)
             .end((err, res) => {
                 res.should.have.status(200);
-                console.log("Res body POST success:", res.body);
+                // console.log("Res body POST success:", res.body);
                
                 res.body.should.be.a("object");
                 res.body.should.have.property("message").eql("Movie successfully added!");
@@ -98,8 +98,8 @@ describe("Movies", () => {
                .request(expressApp)
                .get(`/movies/${movieId}`)
                .end((err, res) => {
-                console.log("Response from GET/:id:", res.body)
-                console.log("Response End")
+                // console.log("Response from GET/:id:", res.body)
+                // console.log("Response End")
                     res.should.have.status(200);
                     res.body.movie.should.be.a('object');
                     res.body.should.have.property('message').eql('Movie successfully Retrieved!');
@@ -122,8 +122,8 @@ describe("Movies", () => {
                 .put(`/movies/${movieId}`)
                 .send(updatedData)
                 .end((err, res) => {
-                    console.log("Response data in PUT:", res.body)
-                    console.log("PUT Response End")
+                    // console.log("Response data in PUT:", res.body)
+                    // console.log("PUT Response End")
                     if (err) {
                         console.error("Error occurred while updating movie:", err);
                         done(err);
@@ -139,28 +139,29 @@ describe("Movies", () => {
     });
     
     // DELETE route
-    // describe('DELETE /movies/:id', () => {
-    //     it('should delete a movie by ID', (done) => {
-    //         chai.request(expressApp)
-    //             .delete(`/movies/${movieId}`)
-    //             .end((err, res) => {
-    //                 console.log("Response in Delete:", res.body)
-    //                 console.log("Delete Response End")
-    //                 if (err) {
-    //                     console.error("Error occurred while deleting movie:", err);
-    //                     done(err);
-    //                     return;
-    //                 }
-    //                 res.should.have.status(200);
-    //                 res.body.should.be.a('object');
-    //                 res.body.should.have.property('message').eql('Movie successfully deleted!');
-    //                 res.body.getDeletedMovie.should.be.a('object').that.is.empty;
-    //                 res.body.deletedMovie.should.have.property('acknowledged').eq(true);
-    //                 res.body.deletedMovie.should.have.property('deletedCount').eq(1);
-    //                 done();
-    //             });
-    //     });
-    // });
+    describe('DELETE /movies/:id', () => {
+        it('should delete a movie by ID', (done) => {
+            chai.request(expressApp)
+                .delete(`/movies/${movieId}`)
+                .end((err, res) => {
+                    console.log("-------Delete Response BEGIN------------")
+                    console.log("Response in DELETE /movies/:id:", res.body)
+                    console.log("----------Delete Response END------------")
+                    if (err) {
+                        console.error("Error occurred while deleting movie:", err);
+                        done(err);
+                        return;
+                    }
+                    res.should.have.status(200);
+                    res.body.movie.should.be.a('object');
+                    res.body.should.have.property('message').eql('Movie successfully deleted!');
+                    // res.body.should.be.a('object').that.is.empty;
+                    res.body.movie.should.have.property('acknowledged').eq(true);
+                    res.body.movie.should.have.property('deletedCount').eq(1);
+                    done();
+                });
+        });
+    });
     
     // end of parent block
 });

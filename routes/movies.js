@@ -73,7 +73,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const newMovie = await moviesController.createMovie(req.body);
-        console.log("New Movie added data from the POST router:", newMovie);
+        // console.log("New Movie added data from the POST router:", newMovie);
         const newMovieWithLinks = {
             ...newMovie,
             links: [
@@ -95,7 +95,7 @@ router.post('/', async (req, res) => {
 /*********************************************/
 router.put('/:id', async (req, res) => {
     const updatedMovie = req.body;
-    console.log("updateMovie data in the PUT router:", updatedMovie);
+    // console.log("updateMovie data in the PUT router:", updatedMovie);
     const movieId = req.params.id;
     try {
         if (!movieId) {
@@ -108,7 +108,7 @@ router.put('/:id', async (req, res) => {
         }
 
         const result = await moviesController.updateMovie(movieId, updatedMovie);
-        console.log("Result of updated Movie: 'result' data in the PUT router:", result);
+        // console.log("Result of updated Movie: 'result' data in the PUT router:", result);
 
         if (result) {
             // Movie successfully updated
@@ -135,7 +135,33 @@ router.put('/:id', async (req, res) => {
 /*********************************************/
 //              DELETE MOVIE BY ID
 /*********************************************/
-router.delete('/:id', moviesController.deleteMovie);
+router.delete('/:id', async (req, res) => {
+    try {
+        const movieId = req.params.id;
+        if (!movieId) {
+            return res.status(400).json({ error: 'Invalid movie ID' });
+        }
+        const deletedMovie = await moviesController.deleteMovie(movieId);
+        console.log("-----------Result of Deleted Movie: 'deletedMovie' data in the DELETE router-------:\n", 
+            deletedMovie
+        );
+        if (deletedMovie) {
+            const deletedMovieWithLinks = {
+                ...deletedMovie,
+                links: [
+                    { rel: 'self', href: `${baseURL}/movies/${deletedMovie._id}` },
+                    { rel: 'create', href: `${baseURL}/movies` },
+                ],
+            };
+            res.json({ movie: deletedMovieWithLinks, message: 'Movie successfully deleted!' });
+        } else {
+            res.status(404).json({ error: 'Movie not found' });
+        }
+    } catch (error) {
+        console.error('Error while deleting movie:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 
 export default router;

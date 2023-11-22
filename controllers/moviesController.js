@@ -75,7 +75,7 @@ export const updateMovie = async (movieId, updatedData) => {
       let update = { $set: updatedData };
       // let updateArrays =  { $push: updatedData };
       let result = await collection.findOneAndUpdate(query, update, { returnDocument: 'after' });
-      console.log("data of 'result' from the updateMovie controller:", result);
+      // console.log("data of 'result' from the updateMovie controller:", result);
       if (result) {
         return result;
       } else {
@@ -89,17 +89,22 @@ export const updateMovie = async (movieId, updatedData) => {
 
 
 // Delete movie by ID
-export const deleteMovie = async (id) => {
+export const deleteMovie = async (movieId) => {
   try {
-    const query = { _id: new ObjectId(req.params.id) };
     const db = await connectToDatabase();
     const collection = db.collection("movies_testing");
-    const deletedMovie = await collection.deleteOne(query);
-    const getDeletedMovie = collection.find(query).toArray();
 
-    res.status(200).json({ message: "Movie successfully deleted!", getDeletedMovie, deletedMovie });
+    if (!ObjectId.isValid(movieId)) {
+      return null;
+    }
+    const query = { _id: new ObjectId(movieId) };
+    const deletedMovie = await collection.deleteOne(query);
+    console.log("------------Deleted Movie data in the deleteMovie controller:\n", deletedMovie);
+
+    return deletedMovie;
+    // res.status(200).json({ message: "Movie successfully deleted!", getDeletedMovie, deletedMovie });
   } catch (error) {
     console.error("Error while deleting movie by ID:", error);
-    res.status(500).send("Internal Server Error");
+    throw error;
   }
 };
