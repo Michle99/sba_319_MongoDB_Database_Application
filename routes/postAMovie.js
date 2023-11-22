@@ -41,6 +41,8 @@ router.post('/', async (req, res) => {
                 { rel: 'self', href: `${baseURL}/api/movies/${newMovie._id}` },
                 { rel: 'update', href: `${baseURL}/api/movies/${newMovie._id}` },
                 { rel: 'delete', href: `${baseURL}/api/movies/${newMovie._id}` },
+                { rel: 'getById', href: `${baseURL}/api/movies/${newMovie._id}` },
+                { rel: 'get', href: `${baseURL}/api/movies` },
             ],
         };
         res.json({ movie: newMovieWithLinks, message: 'Movie successfully added!' });

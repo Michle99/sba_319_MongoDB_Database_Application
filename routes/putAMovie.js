@@ -67,7 +67,9 @@ router.put('/:id', async (req, res) => {
                 ...result,
                 links: [
                     { rel: 'self', href: `${baseURL}/api/movies/${result._id}` },
-                    { rel: 'update', href: `${baseURL}/api/movies/${result._id}` },
+                    { rel: 'post', href: `${baseURL}/api/movies/` },
+                    { rel: 'get', href: `${baseURL}/api/movies/` },
+                    { rel: 'getById', href: `${baseURL}/api/movies/${result._id}` },
                     { rel: 'delete', href: `${baseURL}/api/movies/${result._id}` },
                 ],
             };

@@ -53,7 +53,10 @@ router.delete('/:id', async (req, res) => {
                 ...deletedMovie,
                 links: [
                     { rel: 'self', href: `${baseURL}/api/movies/${deletedMovie._id}` },
-                    { rel: 'create', href: `${baseURL}/api/movies` },
+                    { rel: 'post', href: `${baseURL}/api/movies` },
+                    { rel: 'get', href: `${baseURL}/api/movies` },
+                    { rel: 'getById', href: `${baseURL}/api/movies/${deletedMovie._id}` },
+                    { rel: 'update', href: `${baseURL}/api/movies/${deletedMovie._id}` },
                 ],
             };
             res.json({ movie: deletedMovieWithLinks, message: 'Movie successfully deleted!' });

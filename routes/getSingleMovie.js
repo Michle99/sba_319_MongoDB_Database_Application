@@ -50,6 +50,7 @@ router.get('/:id', async (req, res) => {
             ...movie,
             links: [
                 { rel: 'self', href: `${baseURL}/api/movies/${movie._id}` },
+                { rel: 'get', href: `${baseURL}/api/movies` },
                 { rel: 'update', href: `${baseURL}/api/movies/${movie._id}` },
                 { rel: 'delete', href: `${baseURL}/api/movies/${movie._id}` },
             ],

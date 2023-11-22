@@ -29,8 +29,7 @@ router.get('/', async (req, res) => {
                 return {
                     ...movie,
                     links: [
-                        { rel: 'self', href: `${baseURL}/api/movies` },
-                        { rel: 'getById', href: `${baseURL}/api/movies/${movie._id}` },
+                        { rel: 'self', href: `${baseURL}/api/movies/${movie._id}` },
                         { rel: 'update', href: `${baseURL}/api/movies/${movie._id}` },
                         { rel: 'delete', href: `${baseURL}/api/movies/${movie._id}` },
                     ],
@@ -47,6 +46,3 @@ router.get('/', async (req, res) => {
 });
 
 export default router;
-
-
-

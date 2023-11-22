@@ -31,7 +31,7 @@ describe("Movies", () => {
         it("it should GET all the movies", (done) => {
         chai
             .request(expressApp)
-            .get("/movies")
+            .get("/api/movies")
             .end((err, res) => {
                 // console.log("Res.body in GET:", res.body);
             res.should.have.status(200);
@@ -48,7 +48,7 @@ describe("Movies", () => {
         console.log("Before request");
         chai
             .request(expressApp)
-            .post("/movies")
+            .post("/api/movies")
             .send(missingTitleMovieData)
             .end((err, res) => {
                 // console.log("Res body in POST error:", res.body);
@@ -69,7 +69,7 @@ describe("Movies", () => {
         it("should POST a new movie", (done) => {
         chai
             .request(expressApp)
-            .post("/movies")
+            .post("/api/movies")
             .send(testMovieData)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -96,7 +96,7 @@ describe("Movies", () => {
         it('it should GET a movie by the given id', (done) => {
            chai
                .request(expressApp)
-               .get(`/movies/${movieId}`)
+               .get(`/api/movies/${movieId}`)
                .end((err, res) => {
                 // console.log("Response from GET/:id:", res.body)
                 // console.log("Response End")
@@ -119,7 +119,7 @@ describe("Movies", () => {
             };
 
             chai.request(expressApp)
-                .put(`/movies/${movieId}`)
+                .put(`/api/movies/${movieId}`)
                 .send(updatedData)
                 .end((err, res) => {
                     // console.log("Response data in PUT:", res.body)
@@ -142,7 +142,7 @@ describe("Movies", () => {
     describe('DELETE /movies/:id', () => {
         it('should delete a movie by ID', (done) => {
             chai.request(expressApp)
-                .delete(`/movies/${movieId}`)
+                .delete(`/api/movies/${movieId}`)
                 .end((err, res) => {
                     // console.log("-------Delete Response BEGIN------------")
                     // console.log("Response in DELETE /movies/:id:", res.body)
