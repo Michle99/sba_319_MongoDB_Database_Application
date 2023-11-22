@@ -14,9 +14,10 @@
    - [Delete a Movie](#5-delete-a-movie)
    - [Failed Validation Request](#6-failed-validations-request)
    - [Error Handling](#7-error-handling)
-4. [Swagger Movie API Documentation](#)
+4. [Swagger Movie API Documentation](#swagger-movie-api-documentation)
 5. [Dependencies](#dependencies)
-6. [Getting Started](#getting-started)
+6. [Resources](#resources)
+7. [Getting Started](#getting-started)
 
 ## Introduction
 This assessment measures your understanding of MongoDB and your capability to implement its features in a practical manner. You have creative freedom in the topic, material, and purpose of the web application you will be developing, so have fun with it! However, remember to plan the scope of your project to the timeline you have been given.
@@ -396,6 +397,13 @@ https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970
 - swagger-jsdoc
 - swagger-ui-express
 - yamljs
+
+
+## Resources
+1. [Mocha](https://mochajs.org) and [Chai](https://www.chaijs.com) for testing.
+2. [Swagger](https://swagger.io/docs/specification/basic-structure/) for Movie API Documentation.
+3. [Test a Node RESTful API with Mocha and Chai](https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai)
+4. [Documenting your Express API with Swagger](https://blog.logrocket.com/documenting-express-js-api-swagger/)
 
 ## Getting Started
 Clone this repo: [sba_319_MongoDB_Database_Application](https://github.com/Michle99/sba_319_MongoDB_Database_Application).
