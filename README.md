@@ -355,10 +355,16 @@ const validationRules = {
 - If the request fails, the API will respond with an appropriate error message and status code.
 
 ## Dependencies
+- chai
+- chai-http
 - dotenv
 - express
+- mocha
 - mongodb
 - nodemon
+- swagger-jsdoc
+- swagger-ui-express
+- yamljs
 
 ## Getting Started
 Clone this repo: [sba_319_MongoDB_Database_Application](https://github.com/Michle99/sba_319_MongoDB_Database_Application).
