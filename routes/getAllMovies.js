@@ -29,9 +29,9 @@ router.get('/', async (req, res) => {
                 return {
                     ...movie,
                     links: [
-                        { rel: 'self', href: `${baseURL}/movies/${movie._id}` },
-                        { rel: 'update', href: `${baseURL}/movies/${movie._id}` },
-                        { rel: 'delete', href: `${baseURL}/movies/${movie._id}` },
+                        { rel: 'self', href: `${baseURL}/api/movies/${movie._id}` },
+                        { rel: 'update', href: `${baseURL}/api/movies/${movie._id}` },
+                        { rel: 'delete', href: `${baseURL}/api/movies/${movie._id}` },
                     ],
                 };
             });
