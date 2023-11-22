@@ -1,11 +1,12 @@
 {
   "name": "sba_319_mongodb",
   "version": "1.0.0",
-  "description": "",
+  "description": "Build an Express application with Node.js and MongoDB.",
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "mocha tests/movies.js --timeout 180000"
   },
   "keywords": [],

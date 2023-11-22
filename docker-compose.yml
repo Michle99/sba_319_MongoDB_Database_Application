@@ -1,13 +1,12 @@
-version: "1.0"
-
+version: '1.0'
 services:
-    app:
-        container_name: movie_api_express_app
-        image: movie_api_express_app
-        restart: always
-        build:
-            context: .
-            dockerfile: Dockerfile
-            target: base
-        ports:
-            - "${PORT}:${PORT}"
+  api:
+    container_name: movies_express_api_app
+    restart: on-failure
+    build: .
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "5000:5000"
+    command: >
+      sh -c "npm run start"
