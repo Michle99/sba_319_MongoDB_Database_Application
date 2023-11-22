@@ -5,12 +5,6 @@ import '../loadEnv.js'
 const router = express.Router();
 const baseURL = process.env.BASE_URL;
 
-
-
-
-
-
-
              
 /**
  * @swagger
@@ -58,8 +52,8 @@ router.delete('/:id', async (req, res) => {
             const deletedMovieWithLinks = {
                 ...deletedMovie,
                 links: [
-                    { rel: 'self', href: `${baseURL}/movies/${deletedMovie._id}` },
-                    { rel: 'create', href: `${baseURL}/movies` },
+                    { rel: 'self', href: `${baseURL}/api/movies/${deletedMovie._id}` },
+                    { rel: 'create', href: `${baseURL}/api/movies` },
                 ],
             };
             res.json({ movie: deletedMovieWithLinks, message: 'Movie successfully deleted!' });

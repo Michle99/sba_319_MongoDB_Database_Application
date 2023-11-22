@@ -66,9 +66,9 @@ router.put('/:id', async (req, res) => {
             const updatedMovieWithLinks = {
                 ...result,
                 links: [
-                    { rel: 'self', href: `${baseURL}/movies/${result._id}` },
-                    { rel: 'update', href: `${baseURL}/movies/${result._id}` },
-                    { rel: 'delete', href: `${baseURL}/movies/${result._id}` },
+                    { rel: 'self', href: `${baseURL}/api/movies/${result._id}` },
+                    { rel: 'update', href: `${baseURL}/api/movies/${result._id}` },
+                    { rel: 'delete', href: `${baseURL}/api/movies/${result._id}` },
                 ],
             };
             res.json({ movie: updatedMovieWithLinks, message: 'Movie successfully updated!' });
