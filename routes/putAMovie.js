@@ -8,7 +8,7 @@ const baseURL = process.env.BASE_URL;
 
 /**
  * @swagger
- * /movies/{id}:
+ * /api/movies/{id}:
  *  put:
  *    summary: Update a movie by ID
  *    tags: [Movie]

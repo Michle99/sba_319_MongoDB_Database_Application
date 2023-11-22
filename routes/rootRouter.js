@@ -8,9 +8,9 @@ const baseURL = process.env.BASE_URL;
 
 /**
  * @openapi
- * /movies:
+ * /:
  *  get:
- *    summary: Get all movies
+ *    summary: Get all movies and the routes to other routers
  *    tags: [Movie]
  *    description: Retrieve a list of all movies.
  *    responses:
@@ -30,6 +30,8 @@ router.get('/', async (req, res) => {
                     ...movie,
                     links: [
                         { rel: 'self', href: `${baseURL}/api/movies/${movie._id}` },
+                        { rel: 'get', href: `${baseURL}/api/movies` },
+                        { rel: 'getById', href: `${baseURL}/api/movies/${movie._id}` },
                         { rel: 'update', href: `${baseURL}/api/movies/${movie._id}` },
                         { rel: 'delete', href: `${baseURL}/api/movies/${movie._id}` },
                     ],

@@ -8,7 +8,7 @@ const baseURL = process.env.BASE_URL;
 
 /**
  * @openapi
- * /movies:
+ * /api/movies:
  *  get:
  *    summary: Get all movies
  *    tags: [Movie]
