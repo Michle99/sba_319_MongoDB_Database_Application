@@ -370,9 +370,8 @@ The url to the swaggerUI API documentation is: [swaggerUI API Documentation](htt
 #### Get All Movies video
 https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970/8457c782-9f1f-4459-a171-3be6b442d7e1
 
-
 ### Get a Single Movie
-<video src="./sba_319_pic/get_movie_by_id.mp4" width="600" height="240" controls></video>
+https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970/957fdf2f-03bf-4b5b-b074-e4921f678288
 
 ### Post a new Movie
 <video src="./sba_319_pic/post_a_movies.mp4" width="600" height="240" controls></video>
