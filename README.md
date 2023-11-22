@@ -374,8 +374,8 @@ The url to the swaggerUI API documentation is: [swaggerUI API Documentation](htt
 ### Update an existing Movie
 <video src="./sba_319_pic/update_a_movie.mp4" width="600" height="240" controls></video>
 
-<!-- ### Delete an existing Movie
-<video src="./sba_319_pic/update_a_movie.mp4" width="600" height="240" controls></video>  -->
+### Delete an existing Movie
+<video src="./sba_319_pic/update_a_movie.mp4" width="600" height="240" controls></video> 
 
 
 ## Dependencies
