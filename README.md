@@ -360,7 +360,12 @@ The below screenshot is the API documentation for the routers in the project.
 
 The url to the swaggerUI API documentation is: [swaggerUI API Documentation](http://localhost:5000/api-docs/)
 
+
+#### Swagger API UI
 <img src="./sba_319_pic/swagger_api_ui.png" width="90%" alt="Swagger UI API documentation interface">
+
+#### Movie Schema
+<img src="./sba_319_pic/movie_schema.png" width="90%" alt="Movie Schema">
 
 #### Get All Movies video
 <video src="./sba_319_pic/get_all_movies.mp4" width="600" height="240" controls></video>
