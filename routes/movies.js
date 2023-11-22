@@ -152,7 +152,46 @@ router.post('/', async (req, res) => {
 });
 
 
-/****************UPDATE MOVIE BY ID*********************/            
+/**
+ * @openapi
+ * tags:
+ *    name: Movie
+ *    description: The Movie API
+ * /movies:
+ *  put:
+ *    summary: Update a movie by ID
+ *    description: Update an existing movie by its ID.
+ *    parameters:
+ *      - name: id
+ *        in: path
+ *        description: Movie ID
+ *        required: true
+ *        schema:
+ *          type: string
+ *        example: '123'
+ *    requestBody:
+ *      content:
+ *        application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Movie'
+ *      required: true
+ *    responses:
+ *      '200':
+ *        description: Movie updated successfully
+ *        content:
+ *          application/json:
+ *            example: { movie: updatedMovie, message: 'Movie updated successfully' }
+ *      '404':
+ *        description: Movie not found
+ *        content:
+ *          application/json:
+ *            example: { error: 'Movie not found' }
+ *      '400':
+ *        description: Invalid request or missing data
+ *        content:
+ *          application/json:
+ *            example: { error: 'Invalid request or missing data' }
+ */         
 router.put('/:id', async (req, res) => {
     const updatedMovie = req.body;
     // console.log("updateMovie data in the PUT router:", updatedMovie);
