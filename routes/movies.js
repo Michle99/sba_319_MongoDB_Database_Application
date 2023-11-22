@@ -2,12 +2,21 @@ import express from 'express';
 import * as moviesController from '../controllers/moviesController.js';
 import '../loadEnv.js'
 
-
 const router = express.Router();
 const baseURL = process.env.BASE_URL;
-
-
-/*************** GET ALL MOVIES *************/
+/**
+ * @swaggger
+ * /:
+ *  get:
+ *    summary: Get all movies
+ *    description: Retrieve a list of all movies.
+ *    responses:
+ *      '200':
+ *        description: Successful response
+ *        content:
+ *          application/json:
+ *            example: { movies: [movie1, movie2], message: 'Movies retrieved successfully' }
+ */
 router.get('/', async (req, res) => {
     try {
         const movies = await moviesController.getAllMovies(req, res);
