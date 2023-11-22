@@ -1,0 +1,52 @@
+{
+    "movies_testing": {
+        "plot": "This is the beginning of the end!!!!!.",
+        "genres": ["isekai", "magic"],
+        "runtime":23,
+        "cast": [
+          "Bell Cranel",
+          "Hestia",
+          "Ais Wallenstein"
+        ],
+        "poster": "https://theglobalcoverage.com/wp-content/uploads/2021/01/That-Time-I-Got-Reincarnated-as-a-Slime-season-1.jpg",
+        "title": "The Demon Sword Master of Excalibur Academy",
+        "fullplot": "Awaken to your goal",
+        "languages": [
+          "English",
+          "Japanese"
+        ],
+        "released": "2021-04-09T00:00:00.000Z",
+        "directors": [
+          "Charlier"
+        ],
+        "rated": "TV-G",
+        "awards": {
+          "wins": 1,
+          "nominations": 0,
+          "text": "1 win."
+        },
+        "lastupdated": "2020-04-09T00:00:00.000Z",
+        "year": 2018,
+        "imdb": {},
+        "countries": [
+          "JAPAN"
+        ],
+        "type": "ANIME",
+        "tomatoes": {
+          "viewer": {
+            "rating": 3.6,
+            "numReviews": 109,
+            "meter": 73
+          },
+          "fresh": 6,
+          "critic": {
+            "rating": 7.6,
+            "numReviews": 6,
+            "meter": 100
+          },
+          "rotten": 0,
+          "lastUpdated": "2022-04-09T00:00:00.000Z"
+        },
+        "num_mflix_comments": 0
+    }
+}
