@@ -12,54 +12,22 @@ if (process.env.NODE_ENV === "testing") {
 const validationRules = {
   $jsonSchema: {
     bsonType: "object",
-    required: ["plot", "genres", "cast", "poster", "title", "type"],
+    required: ["plot", "genres", "type", "title", "poster", "cast", "fullplot", "runtime"],
     properties: {
       plot: { bsonType: "string" },
-      genres: { bsonType: "array", items: { bsonType: "string" } },
-      runtime: { bsonType: "int" },
-      cast: { bsonType: "array", items: { bsonType: "string" } },
-      num_mflix_comments: { bsonType: "int" },
-      poster: { bsonType: "string" },
-      title: { bsonType: "string" },
-      fullplot: { bsonType: "string" },
-      languages: { bsonType: "array", items: { bsonType: "string" } },
-      released: { bsonType: "date" },
-      directors: { bsonType: "array", items: { bsonType: "string" } },
-      writers: { bsonType: "array", items: { bsonType: "string" } },
-      awards: {
-        bsonType: "object",
-        properties: {
-          wins: { bsonType: "int" },
-          nominations: { bsonType: "int" },
-          text: { bsonType: "string" }
-        }
+      genres: {
+        bsonType: "array",
+        items: { bsonType: "string" }
       },
-      lastupdated: { bsonType: "date" },
-      year: { bsonType: "int" },
-      imdb: {
-        bsonType: "object",
-        properties: {
-          rating: { bsonType: "double" },
-          votes: { bsonType: "int" },
-          id: { bsonType: "int" }
-        }
-      },
-      countries: { bsonType: "array", items: { bsonType: "string" } },
       type: { bsonType: "string" },
-      tomatoes: {
-        bsonType: "object",
-        properties: {
-          viewer: {
-            bsonType: "object",
-            properties: {
-              rating: { bsonType: "double" },
-              numReviews: { bsonType: "int" },
-              meter: { bsonType: "int" }
-            }
-          },
-          lastUpdated: { bsonType: "date" }
-        }
-      }
+      title: { bsonType: "string" },
+      poster: { bsonType: "string" },
+      cast: {
+        bsonType: "array",
+        items: { bsonType: "string" }
+      },
+      fullplot: { bsonType: "string" },
+      runtime: { bsonType: "int" }
     }
   }
 };

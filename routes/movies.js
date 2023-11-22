@@ -2,16 +2,9 @@ import express from 'express';
 import * as moviesController from '../controllers/moviesController.js';
 import '../loadEnv.js'
 
+
 const router = express.Router();
 const baseURL = process.env.BASE_URL;
-
-/***
- * 
- * 
- * 
- */
-
-
 
 
 /*************** GET ALL MOVIES *************/
