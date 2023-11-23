@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
         env: 
-          connectionString: ${{ secrets.MONGO_URI }}
+          MONGO_URI: ${{ secrets.CONNECTIONSTRING }}
       - run: npm install
       - run: npm test
 
