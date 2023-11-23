@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
         };
         res.json({ movie: newMovieWithLinks, message: 'Movie successfully added!' });
     } catch (error) {
-        console.error('Error while creating a new movie:', error);
+        // console.error('Error while creating a new movie:', error);
         res.status(500).json({ error: { title: 'Internal Server Error', required: true } });
     }
 });

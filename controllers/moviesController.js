@@ -47,7 +47,7 @@ export const createMovie = async (newMovie) => {
     // console.log("newMovie data in createMovie:", newMovie);
     return newMovie;
   } catch (error) {
-    console.error("Error while creating a new movie:", error);
+    // console.error("Error while creating a new movie:", error);
     throw error;
   }
 };
