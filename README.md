@@ -10,6 +10,13 @@
 
 </div>
 
+<div align="center">
+
+[![GitHub tag](https://img.shields.io/github/tag/Michle99/sba_319_MongoDB_Database_Application?include_prereleases=&sort=semver&color=red)](https://github.com/Michle99/sba_319_MongoDB_Database_Application/releases/)
+[![License](https://img.shields.io/badge/License-MIT-red)](#license)
+[![issues - sba_319_MongoDB_Database_Application](https://img.shields.io/github/issues/Michle99/sba_319_MongoDB_Database_Application)](https://github.com/Michle99/sba_319_MongoDB_Database_Application/issues)
+
+</div>
 
 
 ## Table of Contents
