@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
+    "build": "echo building github actions!",
     "test": "mocha tests/movies.js --timeout 180000"
   },
   "keywords": [],

@@ -1,5 +1,7 @@
 # Use Node.js as base image
 FROM node:latest
+
+LABEL author="github.com/Michle99"
 # Create a directory express mongodb app
 RUN mkdir -p /usr/src/app
 # set working directory in the docker container
