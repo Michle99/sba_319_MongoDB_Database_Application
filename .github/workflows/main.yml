@@ -30,18 +30,10 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
-
-      # install applicaion dependencies
-      - name: Install dependencies
-        run: |
-          npm install
-          npm ci 
-          
-      # build and test the apps     
-      - name: build
-        run: |
-          npm run build
-          npm run test
+        env: 
+          connectionString: ${{ secrets.MONGO_URI }}
+      - run: npm install
+      - run: npm test
 
   push_to_Docker_Hub:
       # The type of runner that the job will run on
