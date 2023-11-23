@@ -11,7 +11,8 @@
 </div>
 
 <div align="center">
-
+[![SBA_319_MongoDB_Express_Docker_CICD](https://github.com/Michle99/sba_319_MongoDB_Database_Application/actions/workflows/main.yml/badge.svg)](https://github.com/Michle99/sba_319_MongoDB_Database_Application/actions/workflows/main.yml)
+  
 [![License](https://img.shields.io/badge/License-MIT-red)](#license)
 
 </div>
