@@ -16,14 +16,14 @@ const __dirname = dirname(__filename);
 const createExpressApp = () => {
     const app = express();
     const swaggerAPIModel = yaml.load(path.join(__dirname, '../swagger/swaggerAPIModel.yaml'));
-    console.log("swaggerAPIModel ", swaggerAPIModel.components.schemas)
+    // console.log("swaggerAPIModel ", swaggerAPIModel.components.schemas)
 
     swaggerOptionsConfig.definition.components.schemas = {
         ...swaggerOptionsConfig.definition.components.schemas,
         ...swaggerAPIModel.components.schemas,
     };
     const swaggerSpecs = swaggerJSDoc(swaggerOptionsConfig);
-    console.log('Swagger Options Config:', swaggerSpecs);
+    // console.log('Swagger Options Config:', swaggerSpecs);
     app.use(express.json());
 
     app.use(

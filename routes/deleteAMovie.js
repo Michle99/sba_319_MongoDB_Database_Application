@@ -45,9 +45,9 @@ router.delete('/:id', async (req, res) => {
             return res.status(400).json({ error: 'Invalid movie ID' });
         }
         const deletedMovie = await moviesController.deleteMovie(movieId);
-        console.log("-----------Result of Deleted Movie: 'deletedMovie' data in the DELETE router-------:\n", 
-            deletedMovie
-        );
+        // console.log("-----------Result of Deleted Movie: 'deletedMovie' data in the DELETE router-------:\n", 
+        //     deletedMovie
+        // );
         if (deletedMovie) {
             const deletedMovieWithLinks = {
                 ...deletedMovie,
