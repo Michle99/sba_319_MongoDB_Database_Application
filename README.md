@@ -15,9 +15,10 @@
    - [Failed Validation Request](#6-failed-validations-request)
    - [Error Handling](#7-error-handling)
 4. [Swagger Movie API Documentation](#swagger-movie-api-documentation)
-5. [Dependencies](#dependencies)
-6. [Resources](#resources)
-7. [Getting Started](#getting-started)
+5. [Creating a Docker Image and Container](#creating-a-docker-image-and-container)
+6. [Dependencies](#dependencies)
+7. [Resources](#resources)
+8. [Getting Started](#getting-started)
 
 ## Introduction
 This assessment measures your understanding of MongoDB and your capability to implement its features in a practical manner. You have creative freedom in the topic, material, and purpose of the web application you will be developing, so have fun with it! However, remember to plan the scope of your project to the timeline you have been given.
@@ -359,16 +360,16 @@ const validationRules = {
 - If the request fails, the API will respond with an appropriate error message and status code.
 
 
-### Swagger Movie API Documentation
+## Swagger Movie API Documentation
 The below screenshot is the API documentation for the routers in the project.
 
 The url to the swaggerUI API documentation is: [swaggerUI API Documentation](http://localhost:5000/api-docs/)
 
 
-#### Swagger API UI
+### Swagger API UI
 <img src="./sba_319_pic/swagger_api_ui.png" width="90%" alt="Swagger UI API documentation interface">
 
-#### Movie Schema
+### Movie Schema
 <img src="./sba_319_pic/movie_schema.png" width="90%" alt="Movie Schema">
 
 #### Get All Movies video
@@ -385,6 +386,33 @@ https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970
 
 ### Delete an existing Movie
 https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970/4babab45-57f9-4e94-af9e-4d00721c10d8
+
+## Creating a Docker Image and Container
+[Docker](https://docs.docker.com) is is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. 
+
+- Install docker desktop application:
+To create a docker container & image, download & install docker desktop: [Install Docker Desktop](https://docs.docker.com/get-docker/)
+- Create a [Dockerfile](https://github.com/Michle99/sba_319_MongoDB_Database_Application/blob/main/Dockerfile) in the root directory of the project. 
+- Create a `.dockerignore` to exclude modules. Sample [.dockerignore](https://github.com/Michle99/sba_319_MongoDB_Database_Application/blob/main/.dockerignore).
+- Create a docker compose to define the service(s) that will be used for the project. 
+[Docker Compose](https://docs.docker.com/compose/) is is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application's services. Then, with a single command, you create and start all the services from your configuration.
+
+Here is a sample [Docker Compose](https://github.com/Michle99/sba_319_MongoDB_Database_Application/blob/main/docker-compose.yml). 
+
+- Lastly, build the docker container with the command:
+
+```
+docker-compose up -d --build
+```
+
+The Express application will be running on http://localhost:5000/api/movies.
+
+- Docker Repository:
+The docker image can be downloaded on hub.docker.com. Use the command to pull the docker image:
+
+```
+docker pull sam12302021/sba_319_mongodb-api
+```
 
 ## Dependencies
 - chai
@@ -404,6 +432,8 @@ https://github.com/Michle99/sba_319_MongoDB_Database_Application/assets/63488970
 2. [Swagger](https://swagger.io/docs/specification/basic-structure/) for Movie API Documentation.
 3. [Test a Node RESTful API with Mocha and Chai](https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai)
 4. [Documenting your Express API with Swagger](https://blog.logrocket.com/documenting-express-js-api-swagger/)
+5. [Docker](https://docs.docker.com) to build  docker images.
+6. [Docker Compose](https://docs.docker.com/compose/) for defining and running multi-container Docker applications.
 
 ## Getting Started
 Clone this repo: [sba_319_MongoDB_Database_Application](https://github.com/Michle99/sba_319_MongoDB_Database_Application).
