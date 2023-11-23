@@ -475,3 +475,7 @@ npm i
 ```
 npm run start
 ```
+
+## License
+
+Released under [MIT](/LICENSE) by [@Michle99](https://github.com/Michle99).
