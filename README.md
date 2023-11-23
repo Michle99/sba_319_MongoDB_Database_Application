@@ -4,7 +4,10 @@
 
 <div align="center">
 
-![Static Badge](https://img.shields.io/badge/MIT)  
+[![Michle99 - sba_319_MongoDB_Database_Application](https://img.shields.io/static/v1?label=Michle99&message=sba_319_MongoDB_Database_Application&color=red&logo=github)](https://github.com/Michle99/sba_319_MongoDB_Database_Application "Go to GitHub repo")
+[![stars - sba_319_MongoDB_Database_Application](https://img.shields.io/github/stars/Michle99/sba_319_MongoDB_Database_Application?style=social)](https://github.com/Michle99/sba_319_MongoDB_Database_Application)
+[![forks - sba_319_MongoDB_Database_Application](https://img.shields.io/github/forks/Michle99/sba_319_MongoDB_Database_Application?style=social)](https://github.com/Michle99/sba_319_MongoDB_Database_Application)
+
 </div>
 
 
