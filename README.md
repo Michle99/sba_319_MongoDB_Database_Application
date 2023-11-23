@@ -2,6 +2,27 @@
   <h1>SBA 319: MongoDB Database Application</h1>
 </div>
 
+<div align="center">
+
+[![Michle99 - sba_319_MongoDB_Database_Application](https://img.shields.io/static/v1?label=Michle99&message=sba_319_MongoDB_Database_Application&color=red&logo=github)](https://github.com/Michle99/sba_319_MongoDB_Database_Application "Go to GitHub repo")
+[![stars - sba_319_MongoDB_Database_Application](https://img.shields.io/github/stars/Michle99/sba_319_MongoDB_Database_Application?style=social)](https://github.com/Michle99/sba_319_MongoDB_Database_Application)
+[![forks - sba_319_MongoDB_Database_Application](https://img.shields.io/github/forks/Michle99/sba_319_MongoDB_Database_Application?style=social)](https://github.com/Michle99/sba_319_MongoDB_Database_Application)
+
+</div>
+
+<div align="center">
+
+[![License](https://img.shields.io/badge/License-MIT-red)](#license)
+
+</div>
+
+<div align="center">
+
+[![Use this template](https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge)](https://github.com/Michle99/sba_319_MongoDB_Database_Application/generate)
+
+
+</div>
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Objectives](#objectives)
@@ -454,3 +475,7 @@ npm i
 ```
 npm run start
 ```
+
+## License
+
+Released under [MIT](/LICENSE) by [@Michle99](https://github.com/Michle99).
