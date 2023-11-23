@@ -14,9 +14,14 @@
 
 [![License](https://img.shields.io/badge/License-MIT-red)](#license)
 
-
 </div>
 
+<div align="center">
+
+[![Use this template](https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge)](https://github.com/Michle99/sba_319_MongoDB_Database_Application/generate)
+
+
+</div>
 
 ## Table of Contents
 1. [Introduction](#introduction)
