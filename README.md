@@ -2,7 +2,10 @@
   <h1>SBA 319: MongoDB Database Application</h1>
 </div>
 
-![Static Badge](https://img.shields.io/badge/:badgeContent)
+<div align="center">
+
+![Static Badge](https://img.shields.io/badge/MIT)  
+</div>
 
 
 
