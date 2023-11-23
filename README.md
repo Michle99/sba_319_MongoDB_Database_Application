@@ -1,6 +1,7 @@
 <div align="center">
   <h1>SBA 319: MongoDB Database Application</h1>
 </div>
+
 <div align="center>
 
   
@@ -17,6 +18,7 @@
     [![issues - sba_319_MongoDB_Database_Application](https://img.shields.io/github/issues/Michle99/sba_319_MongoDB_Database_Application)](https://github.com/Michle99/sba_319_MongoDB_Database_Application/issues)
   
 </div>
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
