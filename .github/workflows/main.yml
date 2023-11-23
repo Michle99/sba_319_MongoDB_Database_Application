@@ -20,7 +20,9 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        
+    env: 
+      MONGO_URI: ${{ secrets.MONGO_URI }}   
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,8 +32,6 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
-        env: 
-          MONGO_URI: ${{ secrets.MONGO_URI  }}
       - run: npm install
       - run: npm test
 
