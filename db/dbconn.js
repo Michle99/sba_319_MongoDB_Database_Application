@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 import '../loadEnv.js'
 
-let connectionString = process.env.MONGO_URI || "";
+let connectionString = process.env.MONGO_URI || "mongodb+srv://nice:1n7prcx5gQHt6IcS@mongopt.auarr0p.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(connectionString);
 
 if (process.env.NODE_ENV === "testing") {
